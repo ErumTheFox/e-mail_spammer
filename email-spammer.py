@@ -4,7 +4,7 @@ from random import randint
 import smtplib
 from colored import fg, attr
 import os
-
+from sys import platform
 
 def boot():
     print("======================================================================")
@@ -22,6 +22,8 @@ password = input(str("E-Mail Passwort   : "))
 def cls():
     os.system('cls')
 
+def clear():
+    os.system('clear')
 
 def server_start():
     server = smtplib.SMTP("smtp.gmail.com")
@@ -30,9 +32,25 @@ def server_start():
     server.login(username, password)
     return server
 
-def spamm(server):
-    cls()
-    boot()
+def spamm():
+    if platform == "linux":
+        cls()
+        boot()
+        attack()
+    elif platform == "darwin":
+        cls()
+        boot()
+        attack()
+    elif platform == "win32":
+        cls()
+        boot()
+        attack()
+    elif platform == "win64":
+        cls()
+        boot()
+        attack()
+
+def attack(server):
     emails = input(str("E-Mail zum Angreifen: "))
     for mailanz in range(1, 1000):
         print(f"=={mailanz}== wurden gesendet!")
