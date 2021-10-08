@@ -15,9 +15,6 @@ boot()
 username = input(str("E-Mail Adresse    : "))
 password = input(str("E-Mail Passwort   : "))
 
-def cls():
-    os.system('cls')
-
 def server_start():
     server = smtplib.SMTP("smtp.gmail.com")
     server.ehlo()
@@ -26,7 +23,6 @@ def server_start():
     return server
 
 def spamm(server):
-    cls()
     boot()
     emails = input(str("E-Mail zum Angreifen: "))
     for mailanz in range(1, 1000):
