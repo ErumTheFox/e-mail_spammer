@@ -25,7 +25,7 @@ def server_start():
 
 def spamm(server):
     emails = input(str("Victims E-Mail: "))
-    print("Press 'Ctrl+C' to close the program!")
+    print("%sPress 'Ctrl+C' to close the program!%s" % (fg(2), attr(0)))
     for mailanz in range(1, 1000):
         print(f"=={mailanz}== mail(s) have been sent!")
         msg = MIMEText(
