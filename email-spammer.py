@@ -5,6 +5,7 @@ import smtplib
 from colored import fg, attr
 import os
 
+
 def boot():
     print("======================================================================")
     print("|                        E-Mail Spammer Tool                         |")
@@ -42,5 +43,10 @@ def main():
         except Exception as e:
             sleep(60)
 
-while True:
-    main()
+try:
+    while True:
+        main()
+
+except KeyboardInterrupt:
+    print("Press Ctrl-C to terminate while statement")
+    pass    
