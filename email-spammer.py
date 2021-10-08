@@ -25,6 +25,7 @@ def server_start():
 
 def spamm(server):
     emails = input(str("Victims E-Mail: "))
+    print("Press 'Ctrl+C' to close the program!")
     for mailanz in range(1, 1000):
         print(f"=={mailanz}== mail(s) have been sent!")
         msg = MIMEText(
@@ -48,5 +49,5 @@ try:
         main()
 
 except KeyboardInterrupt:
-    print("Press Ctrl-C to terminate while statement")
+    print("Program has been closed!")
     pass    
