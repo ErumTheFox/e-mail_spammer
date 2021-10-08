@@ -23,7 +23,6 @@ def server_start():
     return server
 
 def spamm(server):
-    boot()
     emails = input(str("E-Mail zum Angreifen: "))
     for mailanz in range(1, 1000):
         print(f"=={mailanz}== wurden gesendet!")
@@ -45,7 +44,3 @@ def main():
 
 while True:
     main()
-
-
-#Mails an raini
-#951
